@@ -1,0 +1,178 @@
+﻿<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>CSS Hamburger Examples</title>
+    <meta name="description" content="A series of CSS hamburger examples using CSS provided by Jonathan Suh and utilizing the HTML5 Boilerplate 5.3.0 template.">
+    <meta name="author" content="Cronán Gogarty" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="dist/hamburgers.css" rel="stylesheet">
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <header>
+        <h1>CSS Hamburger Examples</h1>
+        <h2>HTML5 Boilerplate 5.3.0 Template</h2>
+        <p>CSS Burger code provided by Jonathan Suh - <a href="https://github.com/jonsuh/hamburgers/blob/master/dist/hamburgers.css" target="_blank">https:/github.com/jonsuh/hamburgers/blob/master/dist/hamburgers.css</a></p>
+        <p>I chose to use plain JavaScript instead of jQuery to handle the click event and toggle the CSS class.</p>
+            <ol>
+                <li>Retrieve all the divs that I will want to toggle the CSS class on.</li>
+                <li>Loop through the array of elements to add an eventListener to each</li>
+                <li>Use the toggle() method on classList to add or remove the 'is-active' class
+                    <br />An issue I had was that the 'is-active' class was being added to the 'hamburger-inner' div element
+                    <br />This was resolved by using e.currentTarget as opposed to e.target
+            </ol>
+
+    </header>
+
+    
+    <div class="hamburger hamburger--arrow">
+        <div class="hamburger-box">
+            <div class="hamburger-inner"></div>
+        </div>
+    </div>
+
+    <div class="hamburger hamburger--arrow-r">
+        <div class="hamburger-box">
+            <div class="hamburger-inner"></div>
+        </div>
+    </div>
+
+    <div class="hamburger hamburger--arrowalt">
+        <div class="hamburger-box">
+            <div class="hamburger-inner"></div>
+        </div>
+    </div>
+
+    <div class="hamburger hamburger--arrowalt-r">
+        <div class="hamburger-box">
+            <div class="hamburger-inner"></div>
+        </div>
+    </div>
+
+    <div class="hamburger hamburger--boring">
+        <div class="hamburger-box">
+            <div class="hamburger-inner"></div>
+        </div>
+    </div>
+
+    <div class="hamburger hamburger--collapse">
+        <div class="hamburger-box">
+            <div class="hamburger-inner"></div>
+        </div>
+    </div>
+
+    <div class="hamburger hamburger--collapse-r">
+        <div class="hamburger-box">
+            <div class="hamburger-inner"></div>
+        </div>
+    </div>
+
+    <div class="hamburger hamburger--elastic">
+        <div class="hamburger-box">
+            <div class="hamburger-inner"></div>
+        </div>
+    </div>
+
+    <div class="hamburger hamburger--elastic-r">
+        <div class="hamburger-box">
+            <div class="hamburger-inner"></div>
+        </div>
+    </div>
+
+    <div class="hamburger hamburger--emphatic">
+        <div class="hamburger-box">
+            <div class="hamburger-inner"></div>
+        </div>
+    </div>
+
+    <div class="hamburger hamburger--emphatic-r">
+        <div class="hamburger-box">
+            <div class="hamburger-inner"></div>
+        </div>
+    </div>
+
+    <div class="hamburger hamburger--slider">
+        <div class="hamburger-box">
+            <div class="hamburger-inner"></div>
+        </div>
+    </div>
+
+    <div class="hamburger hamburger--slider-r">
+        <div class="hamburger-box">
+            <div class="hamburger-inner"></div>
+        </div>
+    </div>
+
+    <div class="hamburger hamburger--spin">
+        <div class="hamburger-box">
+            <div class="hamburger-inner"></div>
+        </div>
+    </div>
+
+    <div class="hamburger hamburger--spin-r">
+        <div class="hamburger-box">
+            <div class="hamburger-inner"></div>
+        </div>
+    </div>
+
+    <div class="hamburger hamburger--squeeze">
+        <div class="hamburger-box">
+            <div class="hamburger-inner"></div>
+        </div>
+    </div>
+
+    <div class="hamburger hamburger--vortex">
+        <div class="hamburger-box">
+            <div class="hamburger-inner"></div>
+        </div>
+    </div>
+
+    <div class="hamburger hamburger--vortex-r">
+        <div class="hamburger-box">
+            <div class="hamburger-inner"></div>
+        </div>
+    </div>
+
+    <script>
+
+        /*
+        I chose to use plain JavaScript instead of jQuery to handle the click event and toggle the CSS class.
+        1. Retrieve all the divs that I will want to toggle the CSS class on.
+        2. Loop through the array of elements to add an eventListener to each
+        3. Use the toggle() method on classList to add or remove the 'is-active' class
+                An issue I had was that the 'is-active' class was being added to the 'hamburger-inner' div element
+                This was resolved by using e.currentTarget as opposed to e.target
+        */
+        var hamburgerList = document.getElementsByClassName("hamburger");
+        for (var i = 0; i < hamburgerList.length; i++) {
+            console.log("listElement[" + i + "] = " + hamburgerList[i].classList.toString());
+            hamburgerList[i].addEventListener('click', doActivate, false);
+        }
+
+        function doActivate(e) {
+            var cro = e.currentTarget;
+            console.log(cro);
+
+            //cro.classList.add('is-active');
+            cro.classList.toggle('is-active');
+        }
+    </script>
+
+</body>
+</html>
